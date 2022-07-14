@@ -92,6 +92,11 @@ div .p-style-1 {
 
 }
 
+.score-list {
+
+    Padding-left: 35px;
+}
+
 
 
 /* Answer buttons */
@@ -136,7 +141,7 @@ div .p-style-1 {
 /* styled the question buttons */
 .btn-style-main {
     background-color: var(--main-color));
-    color: black;
+    color: white;
     border-radius: 10px;
     width: 225px;
     border: 1px solid black;
@@ -189,7 +194,14 @@ div .style-2 {
 
 }
 
-
+div .style-3 {
+    display: grid;
+    grid-template-rows: 1fr, 2fr;
+    grid-auto-rows: (10px, auto);
+    flex: wrap;
+    justify-content: left;
+    align-content: space-between;
+}
 
 
 section div {
