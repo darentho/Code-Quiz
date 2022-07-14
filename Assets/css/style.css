@@ -45,15 +45,7 @@ header div {
 }
 
 /* styling the header quiz button and Coding Challenge text */
-section div {
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    Margin: 20px auto;
-    padding: 10px;
-}
 
 div .p-style {
     font-size: 20px;
@@ -93,6 +85,15 @@ div .p-style {
     font-weight: bolder;
 }
 
+div .p-style-1 {
+    font-size: .50cm;
+    font: 2px;
+    padding-block: 10px;
+
+}
+
+
+
 /* Answer buttons */
 .answer-btn {
     color: black;
@@ -108,47 +109,9 @@ div .p-style {
     background-color: var(--main-color)
 }
 
-
-/* STYLING FOR QUESTIONS */
-.questions-ul {
-    list-style-type: none;
-    display: contents;
-
+.span-1 {
+    height: 30px;
 }
-
-.questions-li {
-    width: 250px;
-
-}
-
-.list-inner {
-    display: grid;
-    grid-template-rows: 1fr, 2fr, 1fr;
-    grid-auto-rows: (10px, auto);
-    grid-gap: 5px;
-    justify-items: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -209,4 +172,32 @@ div .p-style {
     box-shadow: 0 2px var(--main-color);
     transform: translateY(1px);
     color: black;
+}
+
+
+
+/* hidden html elements */
+
+
+div .style-2 {
+    display: grid;
+    grid-template-rows: 1fr, 2fr;
+    grid-auto-rows: (10px, auto);
+    flex: wrap;
+    justify-content: left;
+    align-content: space-between;
+
+}
+
+
+
+
+section div {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    Margin: 20px auto;
+    padding: 10px;
 }

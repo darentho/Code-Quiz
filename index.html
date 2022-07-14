@@ -62,7 +62,7 @@
                         <li class="questions-li"><button id="answer-4" value="3" type="button"
                                 class="answer-btn">Option-4</button></li>
                     </ul>
-
+                    <!-- div will be hidden as well. -->
                     <div id="right-wrong" class="font-weight-light font-italic">
 
                         <hr>
@@ -72,6 +72,24 @@
                 </div>
             </div>
         </section>
+
+        <!--this is the final score section using an id as well for hiding the section-->
+        <section class="wrapper1" id="final-score">
+            <div class="scores-box">
+                <div class="style-2">
+                    <h2>You've Concluded Succesfuly!</h2>
+                    <p>Your final score is: <span id="score">0</span></p>
+                    <p class="p-style-1">Input your Initials:
+                        <span class="initials-form style-4"><input placeholder="initials" id="initials"
+                                class="span-1"></span>
+                        <button id="submit-score" class="submit-score-btn btn-style-main">Submit</button>
+                        <hr>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
     <script src="Assets/js/index.js" async defer></script>
