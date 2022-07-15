@@ -101,3 +101,16 @@ function startQuiz() {
     setTime();
     setQuestion(questionCount);
 }
+
+// setting the SetQuestion function. 
+function setQuestion(id) {
+    if (id < questions.length) {
+        questionEl.textContent = questions[id].question; //question will show a text showing questions from array.
+        ans1Btn.textContent = questions[id].answers[0];
+        ans2Btn.textContent = questions[id].answers[1];
+        ans3Btn.textContent = questions[id].answers[2];
+        ans4Btn.textContent = questions[id].answers[3];
+    }
+}
+
+start.addEventListener("click", startQuiz);
