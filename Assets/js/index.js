@@ -3,7 +3,7 @@
 // variable for timer   (global) 
 var time = document.querySelector(".time-counter");//bound to the 
 var score = document.querySelector("#score");// bound to the final score section
-var secondsLeft = 75;
+var secondsLeft = 75;//will be bound to the setInterval function <time.textContent = `Time:${secondsLeft}s`;>
 
 //variable for buttons (global )
 const start = document.querySelector("#begin");
@@ -75,3 +75,18 @@ const questions = [
         correctAnswer: "3"
     }
 ];
+
+//setting up the timer to start. 
+function setTime() {
+    let timerInterval = setInterval(function () {
+        secondsLeft--;
+        time.textContent = `Time:${secondsLeft}s`;
+
+        if (secondsLeft === 0 || questionCount === questions.length) {
+            clearInterval(timerInterval);
+            questionsEl.style.display = "none";
+            finalEl.style.display = "block";
+            score.textContent = secondsLeft;
+        }
+    }, 1000);
+}
