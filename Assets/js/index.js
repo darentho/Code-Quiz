@@ -1,7 +1,7 @@
 
 
 // variable for timer   (global) 
-var time = document.querySelector(".time-counter");//bound to the 
+var time = document.querySelector(".time-counter");//bound to the setInterval Function. <time.textContent = `Time:${secondsLeft}s`;>
 var score = document.querySelector("#score");// bound to the final score section
 var secondsLeft = 75;//will be bound to the setInterval function <time.textContent = `Time:${secondsLeft}s`;>
 
@@ -79,14 +79,25 @@ const questions = [
 //setting up the timer to start. 
 function setTime() {
     let timerInterval = setInterval(function () {
-        secondsLeft--;
-        time.textContent = `Time:${secondsLeft}s`;
-
+        secondsLeft--; //will decrease by 1 each 1000mlls
+        time.textContent = `Time:${secondsLeft}s`;//will use the seconds left starting from 75. 
+        //if timer reaches 0 or if question count is through to its full-length then interval will clear. 
+        //this is an either-or statement that will make the finalEl work to provide the All Done! statement. 
         if (secondsLeft === 0 || questionCount === questions.length) {
-            clearInterval(timerInterval);
-            questionsEl.style.display = "none";
-            finalEl.style.display = "block";
-            score.textContent = secondsLeft;
+            clearInterval(timerInterval);// will clear the interval
+            questionsEl.style.display = "none"; // will conceal the questionsEl element. 
+            finalEl.style.display = "block"; //will display previously hidden element <final-score>
+            score.textContent = secondsLeft; //will still display the timer that should be 0 if the condition is met. 
         }
     }, 1000);
+}
+
+// Begin the quiz function. 
+function startQuiz() {
+    codersIntro.style.display = "none"; //will conceal #challenge-begins. 
+    questionsEl.style.display = "block";//will reveal the questions #all-questions
+    questionCount = 0;//will set the counter for the questions. 
+
+    setTime();
+    setQuestion(questionCount);
 }
