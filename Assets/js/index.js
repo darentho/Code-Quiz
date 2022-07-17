@@ -144,3 +144,40 @@ function checkAnswer(event) {
     }
     setQuestion(questionCount);
 }
+//function for adding the score 
+function addScore(event) {
+    event.preventDefault();
+
+    finalEl.style.display = "none";
+    highscoresEl.style.display = "block";
+
+    let init = initialsInput.value.toUpperCase();
+    scoreList.push({ initials: init, score: secondsLeft });
+
+    // sorting the high scores
+    scoreList = scoreList.sort((a, b) => {
+        if (a.score < b.score) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+
+    scoreListEl.innerHTML = "";
+    for (let i = 0; i < scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        scoreListEl.append(li);
+    }
+
+    // storing the score
+    storeScores();
+    displayScores();
+}
+//check start button listener to start the quiz.
+start.addEventListener("click", startQuiz);
+
+// check answer listener.
+ansBtn.forEach(item => {
+    item.addEventListener('click', checkAnswer);
+});
