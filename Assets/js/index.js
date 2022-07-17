@@ -174,6 +174,27 @@ function addScore(event) {
     storeScores();
     displayScores();
 }
+
+function storeScores() {
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+}
+
+function displayScores() {
+    // used Json to parse the string to an object
+    let storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+
+    // for when retrieved from local array. 
+    if (storedScoreList !== null) {
+        scoreList = storedScoreList;
+    }
+}
+
+
+
+
+
+
+
 //check start button listener to start the quiz.
 start.addEventListener("click", startQuiz);
 
