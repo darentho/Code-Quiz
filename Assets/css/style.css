@@ -2,7 +2,6 @@
 :root {
     --main-color: #363d7c;
     --sub-color: greenyellow;
-    --complimentary-color: #ffffff;
     --answerbtn-color: rgb(54, 61, 124, .5);
 }
 
@@ -42,7 +41,7 @@ header div {
     padding: 10px 15px;
     background-color: transparent;
     border-radius: 10px;
-    color: white;
+    color: black;
 }
 
 header p {
@@ -145,12 +144,11 @@ div .p-style-1 {
 
 /* styled the question buttons */
 .btn-style-main {
-    background-color: var(--main-color));
+    background-color: var(--main-color);
     color: white;
     border-radius: 10px;
     width: 225px;
-    border: 1px solid black;
-    font-size: .50cm;
+    font-size: 25px;
     padding: 8px;
     margin: 4px;
     outline: none;

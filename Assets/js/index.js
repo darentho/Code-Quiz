@@ -189,16 +189,49 @@ function displayScores() {
     }
 }
 
+// added the clear the score function
+function clearScores() {
+    localStorage.clear();
+    scoreListEl.innerHTML = "";
+}
 
-
-
-
-
-
-//check start button listener to start the quiz.
+// EVENT LISTENERS are set in order. 
+// Start timer and display first question when click start quiz
 start.addEventListener("click", startQuiz);
 
-// check answer listener.
+// answer listener
 ansBtn.forEach(item => {
     item.addEventListener('click', checkAnswer);
 });
+
+// addscore event listener 
+submitScrBtn.addEventListener("click", addScore);
+
+// go back event listener 
+goBackBtn.addEventListener("click", function () {
+    highscoresEl.style.display = "none";
+    codersIntro.style.display = "block";
+    secondsLeft = 75;
+    time.textContent = `Time:${secondsLeft}s`;
+});
+
+// clear score event listener
+clearScrBtn.addEventListener("click", clearScores);
+
+//high-score button and display event listener event.
+viewScrBtn.addEventListener("click", function () {
+    if (highscoresEl.style.display === "none") {
+        highscoresEl.style.display = "block";
+    }
+    else if (highscoresEl.style.display === "block") {
+        highscoresEl.style.display = "none";
+    }
+
+    else {
+        return alert("Hey. Take Quiz. There is No High Score.");
+    }
+});
+
+
+
+
