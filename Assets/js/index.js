@@ -98,14 +98,14 @@ function startQuiz() {
     questionsEl.style.display = "block";//will reveal the questions #all-questions
     questionCount = 0;//will set the counter for the questions. 
 
-    setTime();
+    setTime(); //it's calling the setTime function.
     setQuestion(questionCount);
 }
 
 // setting the SetQuestion function. 
 function setQuestion(id) {
     if (id < questions.length) {
-        questionEl.textContent = questions[id].question; //question will show a text showing questions from array.
+        questionEl.textContent = questions[id].question;
         ans1Btn.textContent = questions[id].answers[0];
         ans2Btn.textContent = questions[id].answers[1];
         ans3Btn.textContent = questions[id].answers[2];
@@ -113,4 +113,34 @@ function setQuestion(id) {
     }
 }
 
-start.addEventListener("click", startQuiz);
+// Check Answers Function-Begin Process
+function checkAnswer(event) {
+    event.preventDefault();
+
+    //Created the wright or wrong element. 
+
+    correctWrong.style.display = "block";
+    let p = document.createElement("p");
+    correctWrong.appendChild(p);
+
+    //displays the element for x time. 
+
+    setTimeout(function () {
+        p.style.display = 'none';
+    }, 1000);
+
+    if (questions[questionCount].correctAnswer === event.target.value) {
+        p.textContent = "Correct!";
+    }
+
+    else if (questions[questionCount].correctAnswer !== event.target.value) {
+        secondsLeft = secondsLeft - 10;
+        p.textContent = "Wrong!";
+    }
+
+    // question cycle 
+    if (questionCount < questions.length) {
+        questionCount++;
+    }
+    setQuestion(questionCount);
+}
